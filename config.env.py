@@ -12,10 +12,10 @@ import os
 # Defaults for flask configuration
 IP = os.environ.get('IP', default='127.0.0.1')
 PORT = os.environ.get('PORT', default=5000)
-SERVER_NAME = os.environ.get('SERVER_NAME', default='localhost:5000')
+#SERVER_NAME = os.environ.get('SERVER_NAME', default='localhost:5000')
 SECRET_KEY = os.environ.get('SESSION_KEY', default='a0e8d8d03e848472f3c1776def13bc49')
 LOG_LEVEL = os.environ.get('LOG_LEVEL', default='INFO')
 
-SQLALCHEMY_DATABASE_URI = os.environ.get('POLLER_DATABASE_URI',
+SQLALCHEMY_DATABASE_URI = os.environ.get('SQLALCHEMY_DATABASE_URI',
     default='postgresql://postgres:password1@localhost/postgres')
 SQLALCHEMY_TRACK_MODIFICATIONS = False
