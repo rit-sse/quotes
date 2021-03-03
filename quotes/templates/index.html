@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>SSE Quotes</title>
+        <style>
+            body {
+                font-family: sans-serif;
+                width: 80%;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            .body {
+                font-size: 24px;
+            }
+            .tags:not(:last-child) {
+                content: ",";
+            }
+        </style>
+    </head>
+    <body>
+        <h1>SSE Quote Database</h1>
+        {% for quote in quotes %}
+            <hr>
+            {% autoescape false %}
+            <p class="body">{{ quote.body | replace("\n", "<br>") }}</p>
+            {% endautoescape %}
+            <p class="description">{{ quote.description }}</p>
+            <div className="tags">
+            {% for tag in quote.tags %}
+                <span><i>{{ tag.tagName }}</i></span>
+            {% endfor %}
+            </div>
+        {% endfor %}
+    </body>
+</html>
